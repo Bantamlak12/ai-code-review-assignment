@@ -21,7 +21,7 @@ def calculate_average_order_value(orders):
     for order in orders:
         if not isinstance(order, dict):
             continue
-        if "completed" in order and "amount" in order and order["status"] == "completed" and type(order["amount"]) in [int, float]:
+        if "status" in order and "amount" in order and order["status"] == "completed" and type(order["amount"]) in [int, float]:
             total_amount += order["amount"]
             total_orders_count += 1
 
